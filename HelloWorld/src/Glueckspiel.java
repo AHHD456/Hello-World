@@ -17,47 +17,47 @@ public class Glueckspiel {
 		alter = eingabe.nextByte();
 		if (alter > 120) {
 			System.out.println("Error");
-		}else {
-		System.out.println("Welches Geschlecht bist du?");
-		System.out.println("0=maennlich, 1=weiblich, 2=divers");
-		geschlechtz = eingabe.nextByte();
-		System.out.println("Wie ist dein Name?");
-	    
-	
-		if (alter < 18 || geschlechtz == 2) {
-			System.out.println("Hallo " + name + " Mindestalter oder Geschlecht nicht erfüllt");
-
 		} else {
-			
-			
-			if (geschlechtz == 1) {
-				System.out.println("Guten Tag Frau " + name + "! Wollen sie spielen?");
-				entscheidung = eingabe.nextBoolean();
-			} else {
-				if (geschlechtz == 0) {
-					System.out.println("Guten Tag Herr " + name + "! Wollen sie spielen?");
-					entscheidung = eingabe.nextBoolean();
-				}
-			}
-			if (entscheidung == true) {
-			
-				randomValue = Math.random();
-				randomValue =randomValue*100;
+			System.out.println("Welches Geschlecht bist du?");
+			System.out.println("0=maennlich, 1=weiblich, 2=divers");
+			geschlechtz = eingabe.nextByte();
+			System.out.println("Wie ist dein Name?");
+			name = eingabe.next();
 
-				if (randomValue < 43) {
-					System.out.println("Sie haben gewonnen. Herzlichen Glückwunsch");
-					System.out.println(randomValue);
+			if (alter < 18 || geschlechtz == 2) {
+				System.out.println("Hallo " + name + " Mindestalter oder Geschlecht nicht erfüllt");
+
+			} else {
+
+				if (geschlechtz == 1) {
+					System.out.println("Guten Tag Frau " + name + "! Wollen sie spielen?");
+					entscheidung = eingabe.nextBoolean();
 				} else {
-					if (randomValue > 42) {
-						System.out.println("Sie haben verloren. Versuchen sie ihr Glück nochmal");
-						System.out.println(randomValue);
+					if (geschlechtz == 0) {
+						System.out.println("Guten Tag Herr " + name + "! Wollen sie spielen?");
+						entscheidung = eingabe.nextBoolean();
 					}
 				}
+				if (entscheidung == true) {
 
-			} else {
-				System.out.println("Bis bald, see you later alligator");
+					randomValue = Math.random();
+					randomValue = randomValue * 100;
+
+					if (randomValue < 43) {
+						System.out.println("Sie haben gewonnen. Herzlichen Glückwunsch");
+						// System.out.println(randomValue);
+					} else {
+						if (randomValue > 42) {
+							System.out.println("Sie haben verloren. Versuchen sie ihr Glück nochmal");
+							// System.out.println(randomValue);
+						}
+					}
+
+				} else {
+					System.out.println("Bis bald, see you later alligator");
+				}
 			}
-		}
 
+		}
 	}
-}}
+}
