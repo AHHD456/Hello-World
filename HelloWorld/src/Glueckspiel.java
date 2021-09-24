@@ -5,7 +5,8 @@ public class Glueckspiel {
 	static double randomValue = 2;
 	static byte alter = 19;
 	static byte geschlechtz = 0;
-	static String name = "Null";
+	static String vorname = "Null";
+	static String nachname = "Null";
 	static boolean entscheidung = false;
 
 	public static void main(String[] args) {
@@ -21,20 +22,22 @@ public class Glueckspiel {
 			System.out.println("Welches Geschlecht bist du?");
 			System.out.println("0=maennlich, 1=weiblich, 2=divers");
 			geschlechtz = eingabe.nextByte();
-			System.out.println("Wie ist dein Name?");
-			name = eingabe.next();
+			System.out.println("Wie ist dein Vorname?");
+			vorname = eingabe.next();
+			System.out.println("Wie ist dein Nachname?");
+			nachname = eingabe.next();
 
 			if (alter < 18 || geschlechtz == 2) {
-				System.out.println("Hallo " + name + " Mindestalter oder Geschlecht nicht erfüllt");
+				System.out.println("Hallo " + vorname + " Mindestalter oder Geschlecht nicht erfüllt");
 
 			} else {
 
 				if (geschlechtz == 1) {
-					System.out.println("Guten Tag Frau " + name + "! Wollen sie spielen?");
+					System.out.println("Guten Tag Frau " + nachname + "! Wollen sie spielen?");
 					entscheidung = eingabe.nextBoolean();
 				} else {
 					if (geschlechtz == 0) {
-						System.out.println("Guten Tag Herr " + name + "! Wollen sie spielen?");
+						System.out.println("Guten Tag Herr " + nachname + "! Wollen sie spielen?");
 						entscheidung = eingabe.nextBoolean();
 					}
 				}
